@@ -1,0 +1,5 @@
+@use "../../styles/page-common.scss" as homepage;
+
+.mainDescription {
+  @include homepage.page-intro("home");
+}

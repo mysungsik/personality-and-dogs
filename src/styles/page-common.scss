@@ -1,0 +1,42 @@
+@mixin page-intro($page: "home") {
+  display: flex;
+  width: 100%;
+  height: 30rem;
+  justify-content: space-between;
+  align-items: center;
+
+  @if ($page== "home") {
+    background-color: var(--homepage-intro-background-color);
+  } @else if($page== "number") {
+    background-color: var(--testNumber-intro-background-color);
+  } @else if($page== "dogs") {
+    background-color: var(--main-background-color-blue);
+  }
+
+  &__text {
+    margin-left: 2rem;
+    & h1 {
+      font-size: 2.5rem;
+      @if ($page== "home") {
+        color: var(--homepage-intro-font-color);
+      } @else if ($page== "number") {
+        color: var(--testNumber-intro-font-color);
+      } @else if ($page== "dogs") {
+        color: rgb(247, 195, 127);
+      }
+    }
+    & p {
+      font-size: 1.2rem;
+      color: rgb(255, 255, 255);
+    }
+    & hr {
+      width: 60%;
+    }
+  }
+  &__image {
+    margin-right: 1.5rem;
+    & img {
+      border-radius: 20px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@use "../../styles/page-common.scss" as test;
+@use "../../styles/UI-commons.scss" as commonUi;
+
+.mainDescription {
+  @include test.page-intro("number");
+}
+
+.testResult__section {
+  text-align: center;
+  padding-bottom: 2rem;
+
+  .description {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  .button {
+    @include commonUi.default-Ui("default__button");
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

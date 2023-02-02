@@ -1,0 +1,18 @@
+// ... as commonUi
+
+@mixin default-Ui($UiName) {
+  @if ($UiName == "hr") {
+    width: 80%;
+  }
+  @if ($UiName == "default__button") {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    background-color: rgb(159, 234, 159);
+    border: 0.2px solid;
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(97, 213, 97);
+    }
+  }
+}

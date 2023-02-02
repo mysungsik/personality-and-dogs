@@ -1,0 +1,23 @@
+.selectCard {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  padding: 1rem 0.5rem;
+  margin: 1rem;
+
+  &__text {
+    text-decoration: none !important;
+    & h1,
+    p {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  &:hover {
+    background-color: rgb(228, 178, 102);
+  }
+}

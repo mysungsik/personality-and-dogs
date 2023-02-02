@@ -1,0 +1,25 @@
+.layoutAside {
+  position: fixed;
+  right: 1rem;
+  top: 20%;
+  height: 3rem;
+
+  &__ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    display: block;
+    & li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 0;
+      padding: 0.5rem;
+      background-color: var(--layout-aside-badge-color);
+      border-radius: 30px;
+      &:hover {
+        background-color: var(--layout-aside-badge-color-hover);
+      }
+    }
+  }
+}

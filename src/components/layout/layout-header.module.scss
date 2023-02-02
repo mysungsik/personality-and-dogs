@@ -1,0 +1,93 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+
+  // 로고
+  &__logo {
+    margin: 1rem;
+    margin-left: 2rem;
+    text-align: center;
+
+    // 로고 하단부 글자
+    & p {
+      margin: 0;
+      padding: 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  // 로고 제외 전체 메뉴
+  &__menus {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+
+    // 로그인, 로그아웃 버튼
+    &__users {
+      display: flex;
+      justify-content: flex-end;
+
+      & p {
+        text-align: center;
+        background-color: var(--layout-header-sign-color);
+        width: 13rem;
+        padding: 1rem 0;
+        margin: 0;
+
+        &:hover {
+          cursor: pointer;
+          background-color: var(--layout-header-sign-color-hover);
+        }
+      }
+    }
+
+    // 우측메뉴들 div
+    &__menulist {
+      margin: 1rem;
+
+      // 우측메뉴들 ul
+      & ul {
+        display: flex;
+        list-style: none;
+
+        // 우측메뉴들 li
+        & li {
+          position: relative;
+          margin: 0 1rem;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      // 우측메뉴들 li에 달려있는 dropdown div
+      & .dropdown {
+        display: block;
+        position: absolute;
+        padding: 0;
+        margin-left: -1rem;
+        justify-content: center;
+        background-color: var(--layout-header-dropdown-color);
+
+        li {
+          background-color: var(--layout-header-dropdown-list-color);
+          margin: 0.5rem 0;
+          padding: 0.2rem 0.5rem;
+
+          &:hover {
+            cursor: pointer;
+            background-color: var(--layout-header-dropdown-list-color-hover);
+          }
+        }
+      }
+    }
+  }
+}
