@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
-interface TestResultType {
+export interface TestResultType {
   _id: string;
   testId: string;
   testType: string;

@@ -1,8 +1,26 @@
+import DogsIntro from "@/components/dogs/dogs-intro";
+import DogsMatch from "@/components/dogs/dogs-match";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+
 const DogsPage = () => {
-    // 로컬스토리지에 저장된 test-result 의 값을 받아서, DB 에 담긴 DogsData 를 가져와 필요한 개들(성격 맞는애들만 패치)
-  return <div> 
-    도그페이지
-  </div>;
+  const router = useRouter();
+
+  useEffect(() => {
+    // 데이터없으면 방출
+    const testResult = window.localStorage.getItem("test-result");
+
+    if (testResult === null || testResult === "undefined") {
+      router.replace("/");
+    }
+  }, []);
+
+  return (
+    <div>
+      <DogsIntro />
+      <DogsMatch />
+    </div>
+  );
 };
 
 export default DogsPage;

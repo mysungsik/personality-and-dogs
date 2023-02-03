@@ -10,7 +10,7 @@
   } @else if($page== "number") {
     background-color: var(--testNumber-intro-background-color);
   } @else if($page== "dogs") {
-    background-color: var(--main-background-color-blue);
+    background-color: var( --dogs-intro-background-color);
   }
 
   &__text {

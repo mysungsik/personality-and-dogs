@@ -1,0 +1,5 @@
+@use "../../styles/page-common.scss" as dogs;
+
+.mainDescription {
+  @include dogs.page-intro("dogs");
+}
