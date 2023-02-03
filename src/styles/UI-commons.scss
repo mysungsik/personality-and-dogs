@@ -3,6 +3,35 @@
 @mixin default-Ui($UiName) {
   @if ($UiName == "hr") {
     width: 80%;
+    border: none;
+    border-top: 1px solid rgb(0, 0, 0);
+  }
+  @if ($UiName == "brown__hr") {
+    width: 90%;
+    border: none;
+    border-top: 0.1px solid brown;
+  }
+  @if ($UiName == "default__button") {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    background-color: rgb(159, 234, 159);
+    border: 0.2px solid;
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(97, 213, 97);
+    }
+  }
+  @if ($UiName == "size__button") {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    background-color: rgb(159, 234, 159);
+    border: 0.2px solid;
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(97, 213, 97);
+    }
   }
   @if ($UiName == "default__button") {
     padding: 1rem;

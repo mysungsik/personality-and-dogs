@@ -102,18 +102,28 @@ const DogsMatch = () => {
   ));
 
   return (
-    <div>
-      <div>
-        <button onClick={() => setSize("small")}> small</button>
-        <button onClick={() => setSize("medium")}> medium</button>
-        <button onClick={() => setSize("large")}> large</button>
+    <div className={styles.dogsMatch}>
+      <div className={styles.info__section}>
+        <h2> Mightbe these Dogs FIT Well </h2>
+        <p>{dogsPesonality?.fit}</p>
+        <h2> Mightbe these Dogs BALANCE Well</h2>
+        <p>{dogsPesonality?.balance}</p>
       </div>
-      <div className={styles.cards__section}>
+      <div className={styles.choose__section}>
+        <h2> Choose the size of Dogs which you want</h2>
         <div>
+          <button onClick={() => setSize("small")}> small</button>
+          <button onClick={() => setSize("medium")}> medium</button>
+          <button onClick={() => setSize("large")}> large</button>
+        </div>
+      </div>
+      {size && <h2> {size}</h2>}
+      <div className={styles.cards__section}>
+        <div className={styles.sub__section}>
           <p> FIT</p>
           <ul>{fitDogsList}</ul>
         </div>
-        <div>
+        <div className={styles.sub__section}>
           <p>BALANCE</p>
           <ul>{balanceDogsList}</ul>
         </div>

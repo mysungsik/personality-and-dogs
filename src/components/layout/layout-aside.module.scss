@@ -5,6 +5,7 @@
   height: 3rem;
 
   &__ul {
+    padding: 0;
     display: flex;
     justify-content: center;
     list-style: none;
@@ -18,6 +19,7 @@
       background-color: var(--layout-aside-badge-color);
       border-radius: 30px;
       &:hover {
+        cursor: pointer;
         background-color: var(--layout-aside-badge-color-hover);
       }
     }

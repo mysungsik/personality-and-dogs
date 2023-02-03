@@ -7,6 +7,20 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const dbName = "personality-and-dog";
   const collectionName = "dogs-data";
 
+  if (req.method === "GET") {
+    let result;
+    try {
+      result = await client
+        .db(dbName)
+        .collection(collectionName)
+        .find({})
+        .toArray();
+    } catch (error) {
+      throw new Error("Something got ERROR.");
+    }
+    res.status(200).json({ message: "success to get dogs data", data: result });
+  }
+
   if (req.method === "POST") {
     let result;
     try {
@@ -23,7 +37,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     } catch (error) {
       throw new Error("Something got ERROR.");
     }
-    res.status(200).json({ message: "got test data", data: result });
+    res.status(200).json({ message: "success to get dogs data", data: result });
   }
 };
 

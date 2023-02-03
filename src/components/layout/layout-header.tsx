@@ -34,9 +34,16 @@ const LayoutHeader = () => {
       <div className={styles.header__menus}>
         <div className={styles.header__menus__users}>
           {data === null ? (
-            <p onClick={() => signIn("google", { callbackUrl: "/" })}>SignIn</p>
+            <>
+              <p onClick={() => signIn("google", { callbackUrl: "/" })}>
+                SignIn
+              </p>
+            </>
           ) : (
-            <p onClick={() => signOut({ callbackUrl: "/" })}> SignOut</p>
+            <>
+              <p onClick={() => signOut({ callbackUrl: "/" })}> SignOut</p>
+              <p> My Test Results</p>
+            </>
           )}
         </div>
         <div className={styles.header__menus__menulist}>
@@ -52,8 +59,10 @@ const LayoutHeader = () => {
               </div>
               {testsDropdown && (
                 <ul className={styles.dropdown}>
-                  <li> Number Test</li>
-                  <li> ETC TEST</li>
+                  <li onClick={() => router.push("/test-number")}>
+                    Number Test
+                  </li>
+                  <li onClick={() => router.push("/test-disc")}> DISC Test</li>
                 </ul>
               )}
             </li>
@@ -64,9 +73,10 @@ const LayoutHeader = () => {
               </div>
               {dogsDropdown && (
                 <ul className={styles.dropdown}>
-                  <li> DOG SPECIES </li>
-                  <li> DOG IMAGES</li>
-                  <li> DOG DETAIL</li>
+                  <li onClick={() => router.push("/all-dogs")}>DOG SPECIES</li>
+                  <li onClick={() => router.push("/all-dogs/random-images")}>
+                    DOG IMAGES
+                  </li>
                 </ul>
               )}
             </li>

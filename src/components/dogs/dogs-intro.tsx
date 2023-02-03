@@ -1,13 +1,22 @@
 import Image from "next/image";
 import styles from "./dogs-intro.module.scss";
+import { useEffect, useState } from "react";
+import { TestResultType } from "../test-number/test-number-result";
 
 const DogsIntro = () => {
+  const [testResultData, setTestResultData] = useState<TestResultType>();
+
+  useEffect(() => {
+    const userTestResult = window.localStorage.getItem("test-result");
+    setTestResultData(JSON.parse(String(userTestResult)));
+  }, []);
+
   return (
     <div className={styles.mainDescription}>
       <div className={styles.mainDescription__text}>
-        <h1> UNDERSTAND YOUR PERSONALITY</h1>
+        <h1> YOUR PERSONALITY</h1>
         <hr />
-        <p> AND FIND YOUR DOG</p>
+        <p> {testResultData?.testResult}</p>
       </div>
       <div className={styles.mainDescription__image}>
         <Image

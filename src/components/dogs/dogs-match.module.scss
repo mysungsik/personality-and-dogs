@@ -1,4 +1,36 @@
-.cards__section {
-  display: flex;
-  flex-wrap: wrap;
+@use "../../styles/UI-commons.scss" as commonUi;
+
+.dogsMatch {
+  padding: 1rem;
+  background-color: var(--dogs-match-background-color);
+  text-align: center;
+
+  hr {
+    @include commonUi.default-Ui("brown__hr");
+  }
+
+  .info__section {
+    width: 80%;
+    margin: 3rem auto;
+  }
+  .choose__section {
+    margin: 3rem 0;
+    button {
+      @include commonUi.default-Ui("size__button");
+      margin: 0 1rem;
+    }
+  }
+  .cards__section {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    .sub__section > p {
+      font-size: 1.5rem;
+      width: max-content;
+      padding: 0 2rem;
+      margin: 2rem auto;
+      background-color: orange;
+    }
+  }
 }

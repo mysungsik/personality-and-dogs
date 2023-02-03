@@ -37,7 +37,7 @@ const DogCard = (props: {
         </div>
       ) : (
         <div className={styles.image__section}>
-          <img src={dogRandomImage} alt={name} width={150} height={150} />
+          <img src={dogRandomImage} alt={name} />
         </div>
       )}
       <div className={styles.description__section}>
@@ -45,10 +45,12 @@ const DogCard = (props: {
           <label>Dog Name</label>
           <p> {name}</p>
         </div>
+        <hr />
         <div>
           <label>Dog Personality</label>
           <p> {personality}</p>
         </div>
+        <hr />
         <div>
           <label>Dog Size</label>
           <p> {size}</p>

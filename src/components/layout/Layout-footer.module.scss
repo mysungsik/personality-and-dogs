@@ -30,6 +30,7 @@
       background-color: var(--layout-footer-badge-color);
       border-radius: 30px;
       &:hover {
+        cursor: pointer;
         background-color: var(--layout-footer-badge-color-hover);
       }
     }

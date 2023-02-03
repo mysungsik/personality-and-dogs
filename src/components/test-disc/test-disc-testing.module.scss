@@ -1,0 +1,76 @@
+.test-number__testing {
+  background-color: var(--testNumber-testing-background-color);
+  margin: 0;
+  text-align: center;
+
+  .description__section {
+    padding: 1rem;
+  }
+
+  .testing__section {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .number__card {
+      width: 10rem;
+      height: 12rem;
+      border: 1px solid;
+      margin: 2rem;
+      text-align: center;
+      background-color: white;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .text {
+        width: 80%;
+        font-weight: 600;
+        text-align: center;
+        margin: 0.5rem auto;
+      }
+
+      @for $i from 0 through 9 {
+        .number__#{$i} {
+          font-size: 5rem;
+          font-weight: 800;
+          margin: 0 auto;
+          padding: 0;
+          @if ($i ==0) {
+            color: rgb(38, 144, 24);
+          }
+          @if ($i ==1) {
+            color: rgb(246, 48, 48);
+          }
+          @if ($i ==2) {
+            color: rgb(227, 224, 50);
+          }
+          @if ($i ==3) {
+            color: rgb(0, 60, 128);
+          }
+          @if ($i ==4) {
+            color: rgb(231, 179, 65);
+          }
+          @if ($i ==5) {
+            color: rgb(222, 132, 100);
+          }
+          @if ($i ==6) {
+            color: rgb(107, 107, 107);
+          }
+          @if ($i ==7) {
+            color: rgb(121, 21, 111);
+          }
+          @if ($i ==8) {
+            color: rgb(46, 77, 255);
+          }
+          @if ($i ==9) {
+            color: rgb(0, 0, 0);
+          }
+        }
+      }
+    }
+  }
+}

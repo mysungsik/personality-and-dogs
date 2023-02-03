@@ -11,8 +11,8 @@ html {
   --layout-header-dropdown-list-color: rgb(219, 203, 130);
   --layout-header-dropdown-list-color-hover: rgb(186, 172, 110);
 
-  --layout-aside-badge-color: rgb(210, 236, 186);
-  --layout-aside-badge-color-hover: rgb(155, 232, 97);
+  --layout-aside-badge-color: rgb(255, 100, 240);
+  --layout-aside-badge-color-hover: rgb(12, 12, 12);
 
   --layout-footer-background-color: gray;
   --layout-footer-badge-color: rgb(210, 236, 186);
@@ -28,6 +28,17 @@ html {
 
   --dogs-intro-background-color: salmon;
   --dogs-intro-font-color: rgb(80, 68, 45);
+  --dogs-match-background-color: rgb(232, 187, 145);
+
+  --dogs-card-background-color: rgb(208, 160, 115);
+  --dogs-card-label-font-color: rgb(255, 255, 255);
+  --dogs-card-text-font-color: rgb(18, 18, 18);
+
+  --alldogs-intro-background-color: rgb(230, 84, 68);
+  --alldogs-intro-font-color: black;
+
+  --testDisc-intro-background-color: darkorchid;
+  --testDisc-intro-font-color: rgb(41, 26, 48);
 }
 
 body {

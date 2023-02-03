@@ -10,11 +10,15 @@
   } @else if($page== "number") {
     background-color: var(--testNumber-intro-background-color);
   } @else if($page== "dogs") {
-    background-color: var( --dogs-intro-background-color);
+    background-color: var(--dogs-intro-background-color);
+  } @else if($page== "all-dogs") {
+    background-color: var(--alldogs-intro-background-color);
+  } @else if($page== "disc") {
+    background-color: var(--testDisc-intro-background-color);
   }
 
   &__text {
-    margin-left: 2rem;
+    margin-left: 3rem;
     & h1 {
       font-size: 2.5rem;
       @if ($page== "home") {
@@ -22,7 +26,11 @@
       } @else if ($page== "number") {
         color: var(--testNumber-intro-font-color);
       } @else if ($page== "dogs") {
-        color: rgb(247, 195, 127);
+        color: var(--dogs-intro-font-color);
+      } @else if ($page== "all-dogs") {
+        color: var(--alldogs-intro-font-color);
+      } @else if ($page== "disc") {
+        color: var(--testDisc-intro-font-color);
       }
     }
     & p {
@@ -30,11 +38,11 @@
       color: rgb(255, 255, 255);
     }
     & hr {
-      width: 60%;
+      width: 20%;
     }
   }
   &__image {
-    margin-right: 1.5rem;
+    margin-right: 3rem;
     & img {
       border-radius: 20px;
     }
