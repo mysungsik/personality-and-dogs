@@ -1,5 +1,5 @@
 import { GetStaticPropsContext } from "next";
-import TestNumberResult from "@/components/test-number/test-number-result";
+import TestNumberResult from "../../components/test-number/test-number-result";
 
 const FavoriteNumber = (props: { result: string }) => {
   const { result } = props;

@@ -49,7 +49,7 @@ const LayoutHeader = () => {
         <div className={styles.header__menus__menulist}>
           <ul>
             <li>
-              <div onClick={toggleTestsDropdown}>
+              <div onClick={() => toggleTestsDropdown()}>
                 Personal Test
                 {testsDropdown ? (
                   <span> &#11165;</span>
@@ -59,10 +59,22 @@ const LayoutHeader = () => {
               </div>
               {testsDropdown && (
                 <ul className={styles.dropdown}>
-                  <li onClick={() => router.push("/test-number")}>
+                  <li
+                    onClick={() => {
+                      router.push("/test-number");
+                      setTestsDropdown(false);
+                    }}
+                  >
                     Number Test
                   </li>
-                  <li onClick={() => router.push("/test-disc")}> DISC Test</li>
+                  <li
+                    onClick={() => {
+                      router.push("/test-disc");
+                      setTestsDropdown(false);
+                    }}
+                  >
+                    DISC Test
+                  </li>
                 </ul>
               )}
             </li>
@@ -73,8 +85,20 @@ const LayoutHeader = () => {
               </div>
               {dogsDropdown && (
                 <ul className={styles.dropdown}>
-                  <li onClick={() => router.push("/all-dogs")}>DOG SPECIES</li>
-                  <li onClick={() => router.push("/all-dogs/random-images")}>
+                  <li
+                    onClick={() => {
+                      router.push("/all-dogs");
+                      setDogsDropdown(false);
+                    }}
+                  >
+                    DOG SPECIES
+                  </li>
+                  <li
+                    onClick={() => {
+                      router.push("/all-dogs/random-images");
+                      setDogsDropdown(false);
+                    }}
+                  >
                     DOG IMAGES
                   </li>
                 </ul>

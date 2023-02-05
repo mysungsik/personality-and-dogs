@@ -33,15 +33,17 @@
       background-color: rgb(97, 213, 97);
     }
   }
-  @if ($UiName == "default__button") {
-    padding: 1rem;
+  @if ($UiName == "disc-testing__button") {
+    background-color: var(--testDisc-testing-button-color);
     font-size: 1.2rem;
     font-family: inherit;
-    background-color: rgb(159, 234, 159);
-    border: 0.2px solid;
+    width: 10rem;
+    height: 4rem;
+    border-radius: 10px;
     &:hover {
       cursor: pointer;
-      background-color: rgb(97, 213, 97);
+      background-color: var(--testDisc-testing-button-color-hover);
     }
   }
+
 }
