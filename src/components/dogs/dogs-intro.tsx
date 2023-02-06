@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./dogs-intro.module.scss";
 import { useEffect, useState } from "react";
-import { TestResultType } from "../test-number/test-number-result";
+import { TestResultType } from "../../pages/api/test-result";
 
 const DogsIntro = () => {
   const [testResultData, setTestResultData] = useState<TestResultType>();
@@ -14,7 +14,7 @@ const DogsIntro = () => {
   return (
     <div className={styles.mainDescription}>
       <div className={styles.mainDescription__text}>
-        <h1> YOUR PERSONALITY</h1>
+        <h1> MATCH YOUR PERSONALITY WITH DOGS</h1>
         <hr />
         <p> {testResultData?.testResult}</p>
       </div>

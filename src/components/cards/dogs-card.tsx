@@ -1,5 +1,6 @@
 import styles from "./dogs-card.module.scss";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 let initial = true;
 
@@ -32,8 +33,14 @@ const DogCard = (props: {
   return (
     <div className={styles.dogCard}>
       {dogRandomImage === "" ? (
-        <div className={styles.image__section}>
-          <p> Loading...</p>
+        <div className={styles.loading__section}>
+          <Image
+            src="/images/loading/icons8-corgi.gif"
+            width={100}
+            height={100}
+            alt={"loading"}
+          />
+          <h2> Loading...</h2>
         </div>
       ) : (
         <div className={styles.image__section}>

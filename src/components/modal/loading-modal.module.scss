@@ -1,0 +1,33 @@
+.loading {
+  position: relative;
+
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.396);
+  }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 30rem;
+    height: 20rem;
+    top: 35%;
+    left: calc(50% - 15rem);
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    h1 {
+      padding: 0;
+      margin: 1rem auto;
+    }
+    img {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}

@@ -4,15 +4,19 @@
   background-color: var(--homepage-select-background-color);
   margin: 0;
   text-align: center;
-  padding-bottom: 2rem;
+  padding-top: 2rem;
 
   .text__section {
     padding: 1rem 0;
 
     h1 {
       width: 80%;
+      max-width: 35rem;
       margin: 0 auto;
       font-size: 1.5rem;
+    }
+    p {
+      font-size: 1.3rem;
     }
   }
 
@@ -23,15 +27,15 @@
   .contents__section {
     p {
       font-size: 1.5rem;
-      font-weight: 500;
+      font-weight: 600;
     }
   }
 
   .card__section {
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
-    margin: 2rem;
+    background-color: rgb(124, 167, 223);
+    padding: 2rem 0;
     justify-content: center;
   }
 }

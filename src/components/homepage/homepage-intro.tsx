@@ -7,7 +7,10 @@ const HompageIntro = () => {
       <div className={styles.mainDescription__text}>
         <h1> UNDERSTAND YOUR PERSONALITY</h1>
         <hr />
-        <p> AND FIND YOUR DOG</p>
+        <p>
+          Get to know your Inner-Self with this cool PERSONALITY TEST. And find
+          DOGS that's WELL-FIT for you
+        </p>
       </div>
       <div className={styles.mainDescription__image}>
         <Image

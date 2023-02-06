@@ -1,15 +1,21 @@
 import styles from "./test-number-testing.module.scss";
+import LoadingModal from "../modal/loading-modal";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const TestNumberTesting = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
   const allNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
   const numberTestCards = allNumbers.map((selected) => (
     <div
       key={selected}
       className={styles.number__card}
-      onClick={() => router.push(`/test-number/${selected}`)}
+      onClick={() => {
+        setLoading(true);
+        router.push(`/test-number/${selected}`);
+      }}
     >
       <p className={styles.text}> My Favorite Number</p>
       <div className={styles[`number__${selected}`]}>{selected}</div>
@@ -18,6 +24,7 @@ const TestNumberTesting = () => {
 
   return (
     <div>
+      {loading && <LoadingModal />}
       <div className={styles["test-number__testing"]}>
         <div className={styles.description__section}>
           <h1> NUMBER TEST </h1>

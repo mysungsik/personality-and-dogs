@@ -6,8 +6,6 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { TestResultType } from "../../pages/api/test-result";
 
-
-
 let initial = true;
 
 const TestNumberResult = (props: { result: string }) => {
@@ -97,7 +95,7 @@ const TestNumberResult = (props: { result: string }) => {
             <p>{testResultData?.testDescription}</p>
           </div>
           <div>
-            <h2> your Personal Trait</h2>
+            <h2> Personal Trait</h2>
             <p> {testResultData?.testResult}</p>
           </div>
         </div>

@@ -13,7 +13,7 @@ const SelectTestCard = (props: {
   return (
     <Link href={href} className={styles.selectCard}>
       <div className={styles.selectCard__image}>
-        <Image src={image} alt={alt} width={150} height={75} />
+        <Image src={image} alt={alt} width={75} height={75} />
       </div>
       <div className={styles.selectCard__text}>
         <h1>{title}</h1>

@@ -12,6 +12,19 @@
   .info__section {
     width: 80%;
     margin: 3rem auto;
+    h2 {
+      font-size: 1.7rem;
+    }
+    p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: rgb(65, 65, 65);
+      span {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: rgb(203, 49, 230);
+      }
+    }
   }
   .choose__section {
     margin: 3rem 0;
@@ -27,9 +40,10 @@
 
     .sub__section > p {
       font-size: 1.5rem;
-      width: max-content;
+      width: 15rem;
       padding: 0 2rem;
       margin: 2rem auto;
+      border-radius: 10px;
       background-color: orange;
     }
   }

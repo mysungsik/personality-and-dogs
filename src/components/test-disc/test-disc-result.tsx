@@ -16,7 +16,7 @@ import { TestResultType } from "../../pages/api/test-result";
 let initial = true;
 
 const TestDiscResult = (props: { result: string }) => {
-  const { result } = props;
+  const { result } = props; // page 에서 넘어온, 유저의 테스트결과의 id값 (e.g. di, ds, ic 등...)
   const { data } = useSession();
   const [mainTestResultData, setMainTestResultData] =
     useState<TestResultType>();
@@ -34,7 +34,7 @@ const TestDiscResult = (props: { result: string }) => {
         method: "POST",
         body: JSON.stringify({
           testType: "disc-test",
-          testId: Array.from(result)[0],
+          testId: Array.from(result)[0], // 유저의 최종결과값중 메인결과값
         }),
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const TestDiscResult = (props: { result: string }) => {
         method: "POST",
         body: JSON.stringify({
           testType: "disc-test",
-          testId: Array.from(result)[1],
+          testId: Array.from(result)[1], // 유저의 최종 결과값중 서브결과값
         }),
         headers: {
           "Content-Type": "application/json",
@@ -165,33 +165,33 @@ const TestDiscResult = (props: { result: string }) => {
 export default TestDiscResult;
 
 // testDescription
-// : 
+// :
 // "You focus on getting everything done right. To get things done right, you ask about processes and ideas. You are methodical and immersed in detailed analysis, and make decisions through observation and analysis rather than being guided by emotion. You like to work independently, and You have a calm personality, so You take an objective and sociable attitude when dealing with others."
 // testId
-// : 
+// :
 // "s"
 // testResult
-// : 
+// :
 // "careful, conscientious, accurate, analytical, detailed, organized"
 // testType
-// : 
+// :
 // "disc-test"
 // _id
-// : 
+// :
 // "63e05542ddfc8b4b0d8d657f"
 
 // testDescription
-// : 
+// :
 // "your number personality reveals that you embody leadership qualities. You are independent and self-sufficient. You are ambitious and a high-achiever. You have a mind of your own. You are ambitious and efficient at dealing with problems with brilliant solutions. You like to be on the top and ahead of the crowd. You will stop at nothing to materialize your goals. You are a courageous and creative individual. You find unique opportunities which the crowd misses to notice. You are not a follower. You are most probably a leader that reaches a level of personality cult. You are a caring and passionate individual but can be quite demanding of yourself as well as others in relationships. You have really high standards. You could also feel lonely at times due to such stickler for perfection. You have a loving and appealing personality, but you do not like to be dominated."
 // testId
-// : 
+// :
 // "1"
 // testResult
-// : 
+// :
 // "Independent, self-sufficient, ambitious, high-achiever, courageous"
 // testType
-// : 
+// :
 // "number-test"
 // _id
-// : 
+// :
 // "63d8c32ff16f46b6ab12820b"

@@ -1,104 +1,28 @@
 import styles from "./test-disc-testing.module.scss";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { TestPaperType } from "@/pages/api/test-paper";
+import LoadingModal from "../modal/loading-modal";
+
+let initial = true;
 
 const TestDiscTesting = () => {
+  const [testPaper, setTestPaper] = useState<TestPaperType[]>(); // 질문지
   const [resultState, setResultState] = useState<string[]>([]); // 유저 결과값 데이터
+  const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
 
-  // 질문지 데이터
-  const questionslists = [
-    {
-      id: "0",
-      question: {
-        a: "systematic",
-        b: "passionate",
-        c: "active",
-        d: "exploratory",
-      },
-    },
-    {
-      id: "1",
-      question: {
-        a: "harmonious",
-        b: "sociable",
-        c: "straight",
-        d: "thorough",
-      },
-    },
-    {
-      id: "2",
-      question: {
-        a: "pleasant",
-        b: "funny",
-        c: "big-picture ",
-        d: "discipline",
-      },
-    },
-    {
-      id: "3",
-      question: {
-        a: "patience",
-        b: "persuasive",
-        c: "pioneering",
-        d: "logical",
-      },
-    },
-    {
-      id: "4",
-      question: {
-        a: "helping well",
-        b: "chatterbox",
-        c: "authoritative",
-        d: "objective",
-      },
-    },
-    {
-      id: "5",
-      question: {
-        a: "relaxed",
-        b: "impulsive",
-        c: "result oriented",
-        d: "self-control",
-      },
-    },
-    {
-      id: "6",
-      question: {
-        a: "compassionate",
-        b: "motivational",
-        c: "impatient",
-        d: "careful",
-      },
-    },
-    {
-      id: "7",
-      question: {
-        a: "generous",
-        b: "optimistic",
-        c: "competitive",
-        d: "analytical",
-      },
-    },
-    {
-      id: "8",
-      question: {
-        a: "consistent",
-        b: "lively",
-        c: "determined",
-        d: "preparation",
-      },
-    },
-    {
-      id: "9",
-      question: {
-        a: "considerate",
-        b: "imaginative",
-        c: "bold",
-        d: "accurate",
-      },
-    },
-  ];
+  useEffect(() => {
+    if (initial) {
+      initial = false;
+      return;
+    }
+    (async () => {
+      const testPaper = await fetch("/api/test-paper");
+      const testPaperData = await testPaper.json();
+      setTestPaper(testPaperData.data);
+    })();
+  }, []);
 
   // 정답값 넣는 로직
   const addHandler = (questionId: string, id: string) => {
@@ -115,6 +39,7 @@ const TestDiscTesting = () => {
 
   // 최종 결과 생성 함수 (및 로컬스토리지에 저장 후 페이지이동)
   const submitHandler = () => {
+    setLoading(true);
     const totalD: number = resultState
       .filter((result) => result.startsWith("c"))
       .reduce((acc, cur) => Number(acc) + Number(cur.slice(2, 3)), 0);
@@ -148,7 +73,7 @@ const TestDiscTesting = () => {
   };
 
   // 질문지생성
-  const question = questionslists.map((item) => {
+  const question = testPaper?.map((item) => {
     if (
       resultState.length >= Number(item.id) * 4 &&
       resultState.length < Number(item.id) * 4 + 4
@@ -205,7 +130,7 @@ const TestDiscTesting = () => {
             </button>
           </div>
           <div>
-            <p> {item.id} / 10</p>
+            <p> {Number(item.id) + 1} / 10</p>
           </div>
         </div>
       );
@@ -214,6 +139,7 @@ const TestDiscTesting = () => {
 
   return (
     <div>
+      {loading && <LoadingModal />}
       <div className={styles["test-number__testing"]}>
         <div className={styles.description__section}>
           <h1> DISC TEST </h1>

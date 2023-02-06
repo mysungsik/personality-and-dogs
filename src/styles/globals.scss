@@ -7,28 +7,34 @@ html {
   // Colors
   --layout-header-sign-color: rgb(165, 106, 42);
   --layout-header-sign-color-hover: rgb(200, 129, 53);
-  --layout-header-dropdown-color: brown;
+  --layout-header-dropdown-color: rgb(165, 106, 42);
   --layout-header-dropdown-list-color: rgb(219, 203, 130);
-  --layout-header-dropdown-list-color-hover: rgb(186, 172, 110);
+  --layout-header-dropdown-list-color-hover: rgb(252, 233, 148);
 
-  --layout-aside-badge-color: rgb(255, 100, 240);
-  --layout-aside-badge-color-hover: rgb(12, 12, 12);
+  --layout-aside-badge-color: rgb(247, 228, 159);
+  --layout-aside-badge-color-hover: rgb(217, 201, 140);
 
-  --layout-footer-background-color: gray;
-  --layout-footer-badge-color: rgb(210, 236, 186);
-  --layout-footer-badge-color-hover: rgb(155, 232, 97);
+  --layout-footer-background-color: rgb(179, 179, 179);
+  --layout-footer-badge-color: rgb(247, 228, 159);
+  --layout-footer-badge-color-hover: rgb(217, 201, 140);
 
-  --homepage-intro-background-color: green;
-  --homepage-intro-font-color: orange;
-  --homepage-select-background-color: rgb(115, 167, 244);
+  --homepage-intro-background-color: rgb(43, 71, 85);
+  --homepage-intro-font-color: rgb(232, 177, 76);
+  --homepage-select-background-color: rgb(108, 195, 217);
 
-  --testNumber-intro-background-color: rgb(105, 182, 105);
-  --testNumber-intro-font-color: rgb(80, 68, 45);
-  --testNumber-testing-background-color: rgb(184, 149, 83);
+  --homepage-select-card-font-color: rgb(29, 48, 58);
+  --homepage-select-card-font-color-hover: rgb(17, 28, 34);
+  --homepage-select-card-background-color: rgb(226, 226, 226);
+  --homepage-select-card-background-color-hover: rgb(255, 255, 255);
+
+  --testNumber-intro-background-color: rgb(110, 179, 110);
+  --testNumber-intro-font-color: rgb(68, 47, 8);
+  --testNumber-testing-background-color: rgb(149, 131, 99);
+  --testNumber-testing-background-color2: rgb(91, 67, 23);
 
   --dogs-intro-background-color: salmon;
   --dogs-intro-font-color: rgb(80, 68, 45);
-  --dogs-match-background-color: rgb(232, 187, 145);
+  --dogs-match-background-color: rgb(255, 214, 176);
 
   --dogs-card-background-color: rgb(208, 160, 115);
   --dogs-card-label-font-color: rgb(255, 255, 255);

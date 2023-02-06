@@ -1,16 +1,21 @@
 .selectCard {
-  display: flex;
-  width: fit-content;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 21rem;
   align-items: center;
   text-decoration: none;
-  color: black;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   margin: 1rem;
+  box-shadow: 2px 2px 3px 3px rgba(32, 68, 83, 0.299);
+  background-color: var(--homepage-select-card-background-color);
+  border-radius: 10px;
+  transition: all 200ms ease-in-out;
 
   &__text {
     text-decoration: none !important;
     & h1,
     p {
+      color: var(--homepage-select-card-font-color);
       margin: 0;
       padding: 0;
       text-align: center;
@@ -18,6 +23,11 @@
   }
 
   &:hover {
-    background-color: rgb(228, 178, 102);
+    transform: scale(1.03);
+    & h1,
+    p {
+      color: var(--homepage-select-card-font-color-hover);
+    }
+    background-color: var(--homepage-select-card-background-color-hover);
   }
 }
