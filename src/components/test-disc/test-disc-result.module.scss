@@ -1,0 +1,34 @@
+@use "../../styles/page-common.scss" as test;
+@use "../../styles/UI-commons.scss" as commonUi;
+
+.mainDescription {
+  @include test.page-intro("disc");
+}
+
+.testResult__section {
+  text-align: center;
+  padding-bottom: 2rem;
+
+  .graph {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .description {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    &__type {
+      font-size: 2.3rem;
+      margin: 0 1rem;
+      color: blueviolet;
+    }
+  }
+  .button {
+    @include commonUi.default-Ui("default__button");
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

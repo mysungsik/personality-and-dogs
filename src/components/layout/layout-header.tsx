@@ -42,7 +42,13 @@ const LayoutHeader = () => {
           ) : (
             <>
               <p onClick={() => signOut({ callbackUrl: "/" })}> SignOut</p>
-              <p> My Test Results</p>
+              <p
+                onClick={() => {
+                  router.push("/my-test-result");
+                }}
+              >
+                My Test Results
+              </p>
             </>
           )}
         </div>

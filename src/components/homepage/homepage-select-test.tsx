@@ -25,11 +25,11 @@ const HomepageSelectTests = () => {
             subtitle="to number"
           />
           <SelectTestCard
-            href="/test-number"
+            href="/test-disc"
             image="/images/logo/logo.png"
-            alt="number"
-            title="NUMBER"
-            subtitle="to number"
+            alt="disc"
+            title="DISC"
+            subtitle="to DISC Test"
           />
         </div>
       </div>

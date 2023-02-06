@@ -1,3 +1,4 @@
+import MyTestResults from "../components/my-test-results/my-test-results";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
@@ -9,7 +10,12 @@ const MyTestResultPage = () => {
     router.replace("/");
   }
 
-  return <div>My Test Result</div>;
+  // 왜 data 가 늦게 들어가는가..?
+  return (
+    <div>
+      <MyTestResults userId={data?.user?.email} />
+    </div>
+  );
 };
 
 export default MyTestResultPage;

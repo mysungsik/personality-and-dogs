@@ -1,12 +1,12 @@
 import { GetStaticPropsContext } from "next";
-import TestNumberResult from "@/components/test-number/test-number-result";
+import TestDiscResult from "../../components/test-disc/test-disc-result";
 
 const FavoriteNumber = (props: { result: string }) => {
   const { result } = props;
 
   return (
     <div>
-      <TestNumberResult result={result} />
+      <TestDiscResult result={result} />
     </div>
   );
 };
@@ -23,7 +23,20 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 };
 
 export async function getStaticPaths() {
-  const total = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const total = [
+    "di",
+    "ds",
+    "dc",
+    "id",
+    "is",
+    "ic",
+    "sd",
+    "si",
+    "sc",
+    "cd",
+    "ci",
+    "cs",
+  ];
   return {
     paths: total.map((item) => ({ params: { result: item.toString() } })),
     fallback: true,

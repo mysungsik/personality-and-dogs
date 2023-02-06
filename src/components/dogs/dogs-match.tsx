@@ -1,6 +1,6 @@
 import styles from "./dogs-match.module.scss";
 import { useCallback, useEffect, useState } from "react";
-import { TestResultType } from "../test-number/test-number-result";
+import { TestResultType } from "../../pages/api/test-result";
 import { matchPersonality } from "../../helper/match-dogs-logic";
 import DogCard from "../cards/dogs-card";
 

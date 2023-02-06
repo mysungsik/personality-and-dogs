@@ -1,0 +1,27 @@
+.myResult {
+  &__ul {
+    .list {
+      .main__div {
+        display: flex;
+        align-items: center;
+      }
+      .dropdown__div {
+        background-color: green;
+        padding: 1rem;
+        div {
+          display: flex;
+          align-items: center;
+          margin: 1rem 0;
+          label {
+            width: 7rem;
+          }
+          p {
+            display: inline-block;
+            width: 25rem;
+            margin: 0 2rem;
+          }
+        }
+      }
+    }
+  }
+}

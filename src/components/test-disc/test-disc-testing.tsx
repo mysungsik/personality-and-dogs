@@ -1,8 +1,10 @@
 import styles from "./test-disc-testing.module.scss";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 const TestDiscTesting = () => {
   const [resultState, setResultState] = useState<string[]>([]); // 유저 결과값 데이터
+  const router = useRouter();
 
   // 질문지 데이터
   const questionslists = [
@@ -112,9 +114,38 @@ const TestDiscTesting = () => {
   };
 
   // 최종 결과 생성 함수 (및 로컬스토리지에 저장 후 페이지이동)
-  const submitHandler=()=>{
-    
-  }
+  const submitHandler = () => {
+    const totalD: number = resultState
+      .filter((result) => result.startsWith("c"))
+      .reduce((acc, cur) => Number(acc) + Number(cur.slice(2, 3)), 0);
+    const totalI: number = resultState
+      .filter((result) => result.startsWith("b"))
+      .reduce((acc, cur) => Number(acc) + Number(cur.slice(2, 3)), 0);
+    const totalS: number = resultState
+      .filter((result) => result.startsWith("a"))
+      .reduce((acc, cur) => Number(acc) + Number(cur.slice(2, 3)), 0);
+    const totalC: number = resultState
+      .filter((result) => result.startsWith("d"))
+      .reduce((acc, cur) => Number(acc) + Number(cur.slice(2, 3)), 0);
+
+    const result = [
+      { type: "d", data: totalD },
+      { type: "i", data: totalI },
+      { type: "s", data: totalS },
+      { type: "c", data: totalC },
+    ];
+
+    window.localStorage.setItem("test-result-graph", JSON.stringify(result));
+
+    const reArrange = result.sort((a, b): number => {
+      return b.data - a.data;
+    });
+
+    router.push(`/test-disc/${reArrange[0].type}${reArrange[1].type}`);
+
+    // 스토리지에 저장할 결과 => [{ type: "d", data: totalD }, { type: "i", data: totalI }, ... , ]
+    // 동적 페이지로 이동할 결과 => [test-disc,di], [test-disc,"결과"] 페이지로 이동
+  };
 
   // 질문지생성
   const question = questionslists.map((item) => {
@@ -192,7 +223,10 @@ const TestDiscTesting = () => {
         <div className={styles.testing__section}>{question}</div>
         {resultState.length === 40 && (
           <div className={styles.result__section}>
-            <button className={styles.result__section__submit}>
+            <button
+              className={styles.result__section__submit}
+              onClick={submitHandler}
+            >
               제출하고 결과보기
             </button>
             <button className={styles.result__section__retry}> 다시하기</button>

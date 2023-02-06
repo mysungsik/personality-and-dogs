@@ -3,6 +3,15 @@ import { MongoClient } from "mongodb";
 
 export const client = new MongoClient(String(process.env.MONGODB_URL));
 
+export interface TestResultType {
+  _id: string;
+  testId: string;
+  testType: string;
+  testResult: string;
+  testDescription: string;
+}
+
+
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const dbName = "personality-and-dog";
   const collectionName = "test-result";

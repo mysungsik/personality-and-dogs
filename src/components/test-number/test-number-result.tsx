@@ -4,14 +4,9 @@ import { signIn } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { TestResultType } from "../../pages/api/test-result";
 
-export interface TestResultType {
-  _id: string;
-  testId: string;
-  testType: string;
-  testResult: string;
-  testDescription: string;
-}
+
 
 let initial = true;
 

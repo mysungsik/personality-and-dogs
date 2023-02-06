@@ -1,16 +1,3 @@
-// [all human personality] ==================
-
-//  Independent, ambitious, courageous [1]
-//  Emotional, shy, sensitive   [2]
-//  Outgoing, fun, social   [3]
-//  stubborn, grumpy, brave, Reliable   [4]
-//  energetic, dynamic   [5]
-//  Caring(배려), mischievous(말썽꾸러기), sympathetic(연민어린)   [6]
-//  Calm, cool   [7]
-//  stability   [8]
-//  confident, friendly   [9]
-//  humor, wholeness(완벽주의)   [10]
-
 // [ all dogs personality] ==================
 
 //  friendly(우호적인, 긍정적인)     /   offensive(공격적인) / wary(경계심많은)
@@ -33,7 +20,8 @@ export const matchPersonality = (user: string) => {
   } else if (
     user.includes("emotional") ||
     user.includes("sensitive") ||
-    user.includes("stability")
+    user.includes("stability") ||
+    user.includes("stable")
   ) {
     fit = "gentle,affectionate";
     balance = "playful,active";
@@ -49,7 +37,8 @@ export const matchPersonality = (user: string) => {
   } else if (
     user.includes("caring") ||
     user.includes("sympathetic") ||
-    user.includes("calm")
+    user.includes("calm") ||
+    user.includes("careful")
   ) {
     fit = "gentle,clever";
     balance = "affectionate,active";
