@@ -84,53 +84,55 @@ const TestDiscTesting = () => {
           <p>The button will be disabled when you press it</p>
           <p>It is better to choose without thinking deeply. </p>
           <div className={styles.questionList}>
-            {/* 정답값에 값이 들어있다면 버튼을 disabled */}
-            <button
-              onClick={() => addHandler("a", item.id)}
-              disabled={
-                resultState.find((data) => data.startsWith("a" + item.id))
-                  ? true
-                  : false
-              }
-            >
-              {item.question.a}
-            </button>
-            {/* 정답값에 값이 들어있다면 버튼을 disabled */}
-            <button
-              onClick={() => addHandler("b", item.id)}
-              disabled={
-                resultState.find((data) => data.startsWith("b" + item.id))
-                  ? true
-                  : false
-              }
-            >
-              {item.question.b}
-            </button>
-            {/* 정답값에 값이 들어있다면 버튼을 disabled */}
-            <button
-              onClick={() => addHandler("c", item.id)}
-              disabled={
-                resultState.find((data) => data.startsWith("c" + item.id))
-                  ? true
-                  : false
-              }
-            >
-              {item.question.c}
-            </button>
-            {/* 정답값에 값이 들어있다면 버튼을 disabled */}
-            <button
-              onClick={() => addHandler("d", item.id)}
-              disabled={
-                resultState.find((data) => data.startsWith("d" + item.id))
-                  ? true
-                  : false
-              }
-            >
-              {item.question.d}
-            </button>
-          </div>
-          <div>
-            <p> {Number(item.id) + 1} / 10</p>
+            <div  className={styles.questionList__buttons}>
+              {/* 정답값에 값이 들어있다면 버튼을 disabled */}
+              <button
+                onClick={() => addHandler("a", item.id)}
+                disabled={
+                  resultState.find((data) => data.startsWith("a" + item.id))
+                    ? true
+                    : false
+                }
+              >
+                {item.question.a}
+              </button>
+              {/* 정답값에 값이 들어있다면 버튼을 disabled */}
+              <button
+                onClick={() => addHandler("b", item.id)}
+                disabled={
+                  resultState.find((data) => data.startsWith("b" + item.id))
+                    ? true
+                    : false
+                }
+              >
+                {item.question.b}
+              </button>
+              {/* 정답값에 값이 들어있다면 버튼을 disabled */}
+              <button
+                onClick={() => addHandler("c", item.id)}
+                disabled={
+                  resultState.find((data) => data.startsWith("c" + item.id))
+                    ? true
+                    : false
+                }
+              >
+                {item.question.c}
+              </button>
+              {/* 정답값에 값이 들어있다면 버튼을 disabled */}
+              <button
+                onClick={() => addHandler("d", item.id)}
+                disabled={
+                  resultState.find((data) => data.startsWith("d" + item.id))
+                    ? true
+                    : false
+                }
+              >
+                {item.question.d}
+              </button>
+            </div>
+            <div>
+              <p> {Number(item.id) + 1} / 10</p>
+            </div>
           </div>
         </div>
       );

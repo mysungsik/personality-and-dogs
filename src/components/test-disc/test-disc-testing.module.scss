@@ -21,17 +21,19 @@
     .question {
       background-color: var(--testDisc-testing-question-background-color);
       width: 100%;
-      height: 20rem;
       margin: 2rem 0;
       border-radius: 20px;
 
       .questionList {
-        display: flex;
-        justify-content: space-between;
-        max-width: 40rem;
-        margin: 3rem auto;
-        button {
-          @include commonUi.default-Ui("disc-testing__button");
+        &__buttons {
+          margin: 3rem auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          max-width: 40rem;
+          button {
+            @include commonUi.default-Ui("disc-testing__button");
+            margin: 1rem auto;
+          }
         }
       }
     }
