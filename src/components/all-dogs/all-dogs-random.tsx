@@ -18,7 +18,7 @@ const AllDogsRandom = () => {
       </div>
       <div>
         {randomImages?.map((item) => (
-          <img key={item} src={item} />
+          <img key={item} src={item} alt={"dog"} />
         ))}
       </div>
     </div>

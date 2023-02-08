@@ -11,18 +11,11 @@ import {
   Legend,
 } from "recharts";
 
-let initial = true;
-
 const TestDiscGraph = () => {
   const [graphData, setGraphData] =
     useState<{ type: string; data: number }[]>();
 
   useEffect(() => {
-    if (initial) {
-      initial = false;
-      return;
-    }
-
     const data = JSON.parse(window.localStorage.getItem("test-result-graph")!);
     setGraphData(data);
   }, []);

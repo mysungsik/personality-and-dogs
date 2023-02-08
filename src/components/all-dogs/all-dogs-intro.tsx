@@ -7,7 +7,7 @@ const AllDogsIntro = () => {
       <div className={styles.mainDescription__text}>
         <h1> WELCOME TO DOGS-DATA</h1>
         <hr />
-        <p> These Data from "Dogs API" below URL</p>
+        <p> These Data from &quot;Dogs API&quot; below URL</p>
         <p> https://dog.ceo/dog-api </p>
         <p> Thanks to Dogs API </p>
       </div>

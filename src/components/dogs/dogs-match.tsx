@@ -11,9 +11,6 @@ export interface DogsDataType {
   size: string;
 }
 
-let initial = true;
-let initial2 = true;
-
 const DogsMatch = () => {
   let dogsPesonality; // match 된 dogs 의 dogsPesonality
   const [fitMatchDogsDatas, setFitMatchDogsDatas] = useState<DogsDataType[]>();
@@ -30,10 +27,6 @@ const DogsMatch = () => {
   });
 
   useEffect(() => {
-    if (initial) {
-      initial = false;
-      return;
-    }
     const testResult = JSON.parse(window.localStorage.getItem("test-result")!); // 로컬스토리지 값 가져와서 State로
     setTestResultData(testResult);
   }, []);
@@ -70,12 +63,6 @@ const DogsMatch = () => {
   }, [size]);
 
   useEffect(() => {
-    // 초기조건 빼고
-    if (initial2) {
-      initial2 = false;
-      return;
-    }
-
     // 버튼에 의해 size 가 등록되어, size 가 있다면 함수실행
     if (size !== "") {
       getDogsDataHanlder();

@@ -9,18 +9,10 @@ export interface DogsDataType {
   size: string;
 }
 
-let initial = true;
-
 const AllDogsContents = () => {
   const [allDogs, setAllDogs] = useState<DogsDataType[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    if (initial === true) {
-      initial = false;
-      return;
-    }
-
     const getDogsDataHanlder = async () => {
       const allDogs = await fetch("/api/dogs");
       const allDogsData = await allDogs.json();

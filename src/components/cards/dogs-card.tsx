@@ -2,8 +2,6 @@ import styles from "./dogs-card.module.scss";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-let initial = true;
-
 const DogCard = (props: {
   name: string;
   personality: string;
@@ -13,11 +11,6 @@ const DogCard = (props: {
   const [dogRandomImage, setDogRandomImage] = useState<string>("");
 
   useEffect(() => {
-    if (initial) {
-      initial = false;
-      return;
-    }
-
     const imageAPI = async () => {
       const result = await fetch(
         `https://dog.ceo/api/breed/${name}/images/random`
@@ -28,7 +21,7 @@ const DogCard = (props: {
     };
 
     imageAPI();
-  }, []);
+  }, [name]);
 
   return (
     <div className={styles.dogCard}>

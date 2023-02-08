@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import { TestPaperType } from "@/pages/api/test-paper";
 import LoadingModal from "../modal/loading-modal";
 
-let initial = true;
-
 const TestDiscTesting = () => {
   const [testPaper, setTestPaper] = useState<TestPaperType[]>(); // 질문지
   const [resultState, setResultState] = useState<string[]>([]); // 유저 결과값 데이터
@@ -14,11 +12,8 @@ const TestDiscTesting = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (initial) {
-      setPaperLoading(true);
-      initial = false;
-      return;
-    }
+    setPaperLoading(true);
+
     if (testPaper?.length !== 0) {
     }
     (async () => {
@@ -173,11 +168,11 @@ const TestDiscTesting = () => {
           <h1> DISC TEST </h1>
           <p>
             Use this Free DISC Personality Test to get a fast estimate of your
-            DISC profile based on answers to 10 short questions. It's fast and
-            it's free. You can probably finish it in less than 10 minutes. Use
-            the results to gain insights you can use to better understand why
-            you communicate the way you do and how you can communicate with
-            others more effectively.
+            DISC profile based on answers to 10 short questions. It&apos;s fast
+            and it&apos;s free. You can probably finish it in less than 10
+            minutes. Use the results to gain insights you can use to better
+            understand why you communicate the way you do and how you can
+            communicate with others more effectively.
           </p>
           <p>
             The DISC test classifies types and behavioral items according to two

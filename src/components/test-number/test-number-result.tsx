@@ -6,8 +6,6 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { TestResultType } from "../../pages/api/test-result";
 
-let initial = true;
-
 const TestNumberResult = (props: { result: string }) => {
   const { result } = props;
   const { data } = useSession();
@@ -15,10 +13,6 @@ const TestNumberResult = (props: { result: string }) => {
   const [testResultData, setTestResultData] = useState<TestResultType>();
 
   useEffect(() => {
-    if (initial) {
-      initial = false;
-      return;
-    }
     (async () => {
       const response = await fetch("/api/test-result", {
         method: "POST",
@@ -34,10 +28,6 @@ const TestNumberResult = (props: { result: string }) => {
   }, []);
 
   useEffect(() => {
-    if (initial) {
-      initial = false;
-      return;
-    }
     window.localStorage.setItem("test-result", JSON.stringify(testResultData));
   }, [testResultData]);
 

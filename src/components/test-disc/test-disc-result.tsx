@@ -13,8 +13,6 @@ import { TestResultType } from "../../pages/api/test-result";
 
 // SAVE &  MATCH DOGS 누르면, 해당 결과값으로 DOS 페이지로 이동한다.
 
-let initial = true;
-
 const TestDiscResult = (props: { result: string }) => {
   const { result } = props; // page 에서 넘어온, 유저의 테스트결과의 id값 (e.g. di, ds, ic 등...)
   const { data } = useSession();
@@ -25,10 +23,6 @@ const TestDiscResult = (props: { result: string }) => {
 
   // 쿼리에서 온 결과값을 통해, DB 에서 데이터를 가져온다.
   useEffect(() => {
-    if (initial) {
-      initial = false;
-      return;
-    }
     (async () => {
       const main = await fetch("/api/test-result", {
         method: "POST",
@@ -61,10 +55,6 @@ const TestDiscResult = (props: { result: string }) => {
 
   // DOGS 페지에서 사용할 수 있게, DB 에서 결과값이 나오면 자동으로 로컬스토리지에 넣는다.
   useEffect(() => {
-    if (initial) {
-      initial = false;
-      return;
-    }
     window.localStorage.setItem(
       "test-result",
       JSON.stringify(mainTestResultData)
@@ -100,7 +90,7 @@ const TestDiscResult = (props: { result: string }) => {
     <div>
       <div className={styles.mainDescription}>
         <div className={styles.mainDescription__text}>
-          <h1> YOU have PERSONALITY Type OF '{result.toUpperCase()}'</h1>
+          <h1> YOU have PERSONALITY Type OF &apos;{result}&apos;</h1>
           <hr />
           <p> This Type has below Personality</p>
           <p> {mainTestResultData?.testResult}</p>

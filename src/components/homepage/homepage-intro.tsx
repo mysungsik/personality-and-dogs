@@ -9,7 +9,7 @@ const HompageIntro = () => {
         <hr />
         <p>
           Get to know your Inner-Self with this cool PERSONALITY TEST. And find
-          DOGS that's WELL-FIT for you
+          DOGS that&apos;s WELL-FIT for you
         </p>
       </div>
       <div className={styles.mainDescription__image}>

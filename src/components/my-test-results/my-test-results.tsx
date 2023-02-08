@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { UserTestType } from "../../pages/api/get-user-test-data";
 import styles from "./my-test-results.module.scss";
 
-let initial = true;
 const MyTestResults = (props: { userId: string | null | undefined }) => {
   const { userId } = props;
   const [userResultData, setUserResultData] = useState<UserTestType[]>();
@@ -28,10 +27,6 @@ const MyTestResults = (props: { userId: string | null | undefined }) => {
   };
 
   useEffect(() => {
-    if (initial) {
-      initial = false;
-      return;
-    }
     (async () => {
       const userData = await fetch("/api/get-user-test-data", {
         method: "POST",
