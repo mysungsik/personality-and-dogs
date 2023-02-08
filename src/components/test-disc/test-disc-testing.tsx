@@ -88,8 +88,10 @@ const TestDiscTesting = () => {
           <h1> Test Paper</h1>
           <p> We present 4 personality types. </p>
           <p>
-            Press the four buttons in order, starting with the button that you
-            think suits you best.
+            <strong>
+              Press all buttons, starting with the button that you think suits
+              you best.
+            </strong>
           </p>
           <p>The button will be disabled when you press it</p>
           <p>
@@ -171,7 +173,7 @@ const TestDiscTesting = () => {
           <h1> DISC TEST </h1>
           <p>
             Use this Free DISC Personality Test to get a fast estimate of your
-            DISC profile based on answers to 12 short questions. It's fast and
+            DISC profile based on answers to 10 short questions. It's fast and
             it's free. You can probably finish it in less than 10 minutes. Use
             the results to gain insights you can use to better understand why
             you communicate the way you do and how you can communicate with

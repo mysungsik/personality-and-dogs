@@ -1,6 +1,7 @@
 import MyTestResults from "../components/my-test-results/my-test-results";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const MyTestResultPage = () => {
   const { data } = useSession();
@@ -10,9 +11,12 @@ const MyTestResultPage = () => {
     router.replace("/");
   }
 
-  // 왜 data 가 늦게 들어가는가..?
   return (
     <div>
+      <Head>
+        <title>P&D - My Test Results</title>
+        <meta name="description" />
+      </Head>
       <MyTestResults userId={data?.user?.email} />
     </div>
   );

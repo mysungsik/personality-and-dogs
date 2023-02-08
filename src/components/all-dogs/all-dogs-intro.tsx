@@ -13,7 +13,7 @@ const AllDogsIntro = () => {
       </div>
       <div className={styles.mainDescription__image}>
         <Image
-          src={"/images/main-description/brett-jordan-D44kHt8Ex14-unsplash.jpg"}
+          src={"/images/main-description/alvan-nee-eoqnr8ikwFE-unsplash.jpg"}
           alt={"find-who-you-are"}
           width={300}
           height={300}

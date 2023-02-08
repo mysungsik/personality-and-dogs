@@ -1,11 +1,15 @@
 import { GetStaticPropsContext } from "next";
 import TestDiscResult from "../../components/test-disc/test-disc-result";
-
+import Head from "next/head";
 const FavoriteNumber = (props: { result: string }) => {
   const { result } = props;
 
   return (
     <div>
+      <Head>
+        <title>P&D - DISC Test Result</title>
+        <meta name="description" content="DISC test result" />
+      </Head>
       <TestDiscResult result={result} />
     </div>
   );

@@ -89,10 +89,8 @@ const TestDiscResult = (props: { result: string }) => {
       headers: { "Content-Type": "application/json" },
     });
 
-    const responseData = await response.json();
-
     if (!response.ok) {
-      console.log(responseData.message);
+      return;
     } else {
       router.push("/dogs");
     }

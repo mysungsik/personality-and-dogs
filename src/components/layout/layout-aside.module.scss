@@ -5,22 +5,33 @@
   height: 3rem;
 
   &__ul {
-    padding: 0;
     display: flex;
     justify-content: center;
     list-style: none;
-    display: block;
+    flex-direction: column;
+
     & li {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 1rem 0;
-      padding: 0.5rem;
-      background-color: var(--layout-aside-badge-color);
+      margin: 0.5rem 0;
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--layout-footer-badge-color);
       border-radius: 30px;
+
+      a {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 50px;
+      }
       &:hover {
         cursor: pointer;
-        background-color: var(--layout-aside-badge-color-hover);
+        background-color: var(--layout-footer-badge-color-hover);
       }
     }
   }
