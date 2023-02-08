@@ -1,0 +1,11 @@
+@use "../../styles/UI-commons.scss" as commonUi;
+
+.random {
+  text-align: center;
+  padding: 2rem 0;
+
+  button {
+    @include commonUi.default-Ui("size__button");
+    margin-bottom: 3rem;
+  }
+}

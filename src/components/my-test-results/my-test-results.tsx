@@ -51,26 +51,51 @@ const MyTestResults = (props: { userId: string | null | undefined }) => {
 
   return (
     <div className={styles.myResult}>
-      <h2> HELLO! {userId}</h2>
+      <div className={styles.myResult__title}>
+        <h1> HELLO! {userId}</h1>
+        <p> Latest your Test Result</p>
+      </div>
       <ul className={styles.myResult__ul}>
         {userResultData?.map((item) => (
           <li key={item._id} className={styles.list}>
             <div className={styles.main__div}>
-              <p className={styles.date}>{item.date}</p>
-              <p className={styles.type}>{item.testType}</p>
-              <div>
-                <button onClick={() => dropDownToggle(item._id)}> 확인</button>
-                <button onClick={() => deleteResult(item._id)}>삭제</button>
+              <p className={styles.date}>
+                Date : <span>{item.date}</span>
+              </p>
+              <p className={styles.type}>
+                Test Type : <span>{item.testType}</span>
+              </p>
+              <div className={styles.main__div__buttons}>
+                <button
+                  onClick={() => dropDownToggle(item._id)}
+                  className={styles.check}
+                >
+                  Check
+                </button>
+                <button
+                  onClick={() => deleteResult(item._id)}
+                  className={styles.delete}
+                >
+                  Delete
+                </button>
               </div>
             </div>
             {dropDownId === item._id && (
               <div className={styles.dropdown__div} onClick={hideDropDown}>
-                <p> click to close</p>
                 <div>
-                  <label>YOUR TYPE</label> <p> {item.testId}</p>
+                  <label>Test-Date</label> <p> {item.date}</p>
                 </div>
+                <hr />
                 <div>
-                  <label>YOUT RESULT </label>
+                  <label>Test-TYPE</label> <p> {item.testType.toUpperCase()}</p>
+                </div>
+                <hr />
+                <div>
+                  <label>Test-Id</label> <p> {item.testId.toUpperCase()}</p>
+                </div>
+                <hr />
+                <div>
+                  <label>Test-Result </label>
                   <p> {item.testResult}</p>
                 </div>
               </div>

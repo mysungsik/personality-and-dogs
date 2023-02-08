@@ -4,9 +4,16 @@
   background-color: var(--testDisc-testing-background-color);
   margin: 0;
   text-align: center;
+  padding: 2rem;
 
   .description__section {
     padding: 1rem;
+    p {
+      width: 80%;
+      max-width: 55rem;
+      margin: 1.5rem auto;
+      font-size: 1.2rem;
+    }
   }
 
   .testing__section {
@@ -23,6 +30,10 @@
       width: 100%;
       margin: 2rem 0;
       border-radius: 20px;
+      p {
+        margin: 0.2rem auto;
+        font-size: 1.1rem;
+      }
 
       .questionList {
         &__buttons {
@@ -41,31 +52,38 @@
   .result__section {
     width: 80%;
     max-width: 60rem;
-    height: 20rem;
+    height: 30rem;
     margin: 0 auto;
     border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: var(--testDisc-testing-question-background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    button {
-      margin: 0 2rem;
-    }
+    &__buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 4rem 0;
 
-    &__submit {
-      @include commonUi.default-Ui("disc-testing__button");
-      background-color: var(--testDisc-testing-submit-button-color);
-      &:hover {
-        background-color: var(--testDisc-testing-submit-button-color-hover);
+      button {
+        margin: 0 2rem;
       }
-    }
 
-    &__retry {
-      @include commonUi.default-Ui("disc-testing__button");
-      background-color: var(--testDisc-testing-retry-button-color);
-      &:hover {
-        background-color: var(--testDisc-testing-retry-button-color-hover);
+      .submit {
+        @include commonUi.default-Ui("disc-testing__button");
+        background-color: var(--testDisc-testing-submit-button-color);
+        &:hover {
+          background-color: var(--testDisc-testing-submit-button-color-hover);
+        }
+      }
+
+      .retry {
+        @include commonUi.default-Ui("disc-testing__button");
+        background-color: var(--testDisc-testing-retry-button-color);
+        &:hover {
+          background-color: var(--testDisc-testing-retry-button-color-hover);
+        }
       }
     }
   }

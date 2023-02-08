@@ -10,17 +10,22 @@ const TestDiscTesting = () => {
   const [testPaper, setTestPaper] = useState<TestPaperType[]>(); // 질문지
   const [resultState, setResultState] = useState<string[]>([]); // 유저 결과값 데이터
   const [loading, setLoading] = useState<boolean>(false);
+  const [paperLoading, setPaperLoading] = useState<boolean>(false);
   const router = useRouter();
 
   useEffect(() => {
     if (initial) {
+      setPaperLoading(true);
       initial = false;
       return;
+    }
+    if (testPaper?.length !== 0) {
     }
     (async () => {
       const testPaper = await fetch("/api/test-paper");
       const testPaperData = await testPaper.json();
       setTestPaper(testPaperData.data);
+      setPaperLoading(false);
     })();
   }, []);
 
@@ -80,11 +85,19 @@ const TestDiscTesting = () => {
     ) {
       return (
         <div key={item.id} className={styles.question}>
-          <p> Pick the button that suits you best </p>
+          <h1> Test Paper</h1>
+          <p> We present 4 personality types. </p>
+          <p>
+            Press the four buttons in order, starting with the button that you
+            think suits you best.
+          </p>
           <p>The button will be disabled when you press it</p>
-          <p>It is better to choose without thinking deeply. </p>
+          <p>
+            For accurate results, it is recommended to press without thinking
+            deeply.
+          </p>
           <div className={styles.questionList}>
-            <div  className={styles.questionList__buttons}>
+            <div className={styles.questionList__buttons}>
               {/* 정답값에 값이 들어있다면 버튼을 disabled */}
               <button
                 onClick={() => addHandler("a", item.id)}
@@ -141,23 +154,53 @@ const TestDiscTesting = () => {
 
   return (
     <div>
-      {loading && <LoadingModal />}
+      {paperLoading && (
+        <LoadingModal
+          title="Preparing Test Paper..."
+          image={"/images/loading/icons8-corgi.gif"}
+        />
+      )}
+      {loading && (
+        <LoadingModal
+          title="Getting Test Results..."
+          image={"/images/loading/icons8-corgi.gif"}
+        />
+      )}
       <div className={styles["test-number__testing"]}>
         <div className={styles.description__section}>
           <h1> DISC TEST </h1>
-          <p>...HOW TO DISC TEST...</p>
-          <p> ...HOW TO DISC TEST2...</p>
+          <p>
+            Use this Free DISC Personality Test to get a fast estimate of your
+            DISC profile based on answers to 12 short questions. It's fast and
+            it's free. You can probably finish it in less than 10 minutes. Use
+            the results to gain insights you can use to better understand why
+            you communicate the way you do and how you can communicate with
+            others more effectively.
+          </p>
+          <p>
+            The DISC test classifies types and behavioral items according to two
+            criteria. Extroverts vs introverts, work-centered vs people are the
+            standards. According to these two criteria, four types of D-type,
+            I-type, S-type, and C-type are unfolded.
+          </p>
         </div>
         <div className={styles.testing__section}>{question}</div>
         {resultState.length === 40 && (
           <div className={styles.result__section}>
-            <button
-              className={styles.result__section__submit}
-              onClick={submitHandler}
-            >
-              제출하고 결과보기
-            </button>
-            <button className={styles.result__section__retry}> 다시하기</button>
+            <h1> Test Finish!</h1>
+            <div className={styles.result__section__buttons}>
+              <button className={styles.submit} onClick={submitHandler}>
+                Show Result
+              </button>
+              <button
+                className={styles.retry}
+                onClick={() => {
+                  setResultState([]);
+                }}
+              >
+                Retry
+              </button>
+            </div>
           </div>
         )}
       </div>

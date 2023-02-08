@@ -11,7 +11,7 @@ const AllDogsRandom = () => {
     setRandomImages(responseData.message);
   };
   return (
-    <div>
+    <div className={styles.random}>
       <h1>TODAY DOGS!</h1>
       <div>
         <button onClick={getRandomImages}> Random</button>

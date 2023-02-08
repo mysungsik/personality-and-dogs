@@ -24,7 +24,7 @@ const TestNumberTesting = () => {
 
   return (
     <div>
-      {loading && <LoadingModal />}
+      {loading && <LoadingModal title="Getting Test Results..." image={"/images/loading/icons8-corgi.gif"}/>}
       <div className={styles["test-number__testing"]}>
         <div className={styles.description__section}>
           <h1> NUMBER TEST </h1>

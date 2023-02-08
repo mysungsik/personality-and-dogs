@@ -1,23 +1,89 @@
+@use "../../styles/UI-commons.scss" as commonUi;
+
 .myResult {
+  &__title {
+    h1 {
+      padding: 2rem;
+      background-color: rgb(176, 176, 236);
+      margin: 0;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgb(109, 140, 164);
+      color: aliceblue;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+  }
   &__ul {
+    padding: 1rem 2rem;
+    margin: 0;
+    list-style: none;
+    background-color: rgb(151, 198, 203);
+
     .list {
+      padding: 1rem 4rem;
+      border-radius: 10px;
+      box-shadow: 2px 2px 4px 4px rgba(63, 83, 85, 0.361);
+      background-color: rgba(208, 226, 162, 0.507);
+      margin: 1.5rem;
+      width: 70%;
+      min-width: 40rem;
+
       .main__div {
         display: flex;
         align-items: center;
+        p {
+          margin: 0 1rem;
+          width: 15rem;
+          span {
+            font-weight: 600;
+          }
+        }
+        &__buttons {
+          .check {
+            @include commonUi.default-Ui("disc-testing__button");
+            width: 5rem;
+            height: 2rem;
+            margin: 0 1rem;
+            box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.259);
+          }
+          .delete {
+            @include commonUi.default-Ui("disc-testing__button");
+            width: 5rem;
+            height: 2rem;
+            margin: 0 1rem;
+            box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.259);
+            background-color: gray;
+            &:hover {
+              cursor: pointer;
+              background-color: rgb(175, 175, 175);
+            }
+          }
+        }
       }
       .dropdown__div {
-        background-color: green;
+        background-color: rgba(173, 187, 136, 0.507);
         padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 10px;
+        hr {
+          @include commonUi.default-Ui("gray__hr");
+        }
         div {
           display: flex;
           align-items: center;
           margin: 1rem 0;
+
           label {
             width: 7rem;
+            font-size: 1.1rem;
+            font-weight: 500;
           }
           p {
             display: inline-block;
-            width: 25rem;
             margin: 0 2rem;
           }
         }

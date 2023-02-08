@@ -102,9 +102,9 @@ const TestDiscResult = (props: { result: string }) => {
     <div>
       <div className={styles.mainDescription}>
         <div className={styles.mainDescription__text}>
-          <h1> YOU ARE PERSONALITY OF {result.toUpperCase()}</h1>
+          <h1> YOU have PERSONALITY Type OF '{result.toUpperCase()}'</h1>
           <hr />
-          <p> {result.toUpperCase()} : MIGHT YOU HAVE</p>
+          <p> This Type has below Personality</p>
           <p> {mainTestResultData?.testResult}</p>
           <p>, with an additional {subTestResultData?.testResult}</p>
         </div>
