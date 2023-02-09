@@ -7,9 +7,9 @@ export default NextAuth({
   },
   providers: [
     GoogleProvider({
-      clientId: String(process.env.GOOGLE_CLIENT_ID),
-      clientSecret: String(process.env.GOOGLE_CLIENT_SECRET),
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
   ],
-  secret: String(process.env.SECRET),
+  secret: process.env.SECRET!,
 });

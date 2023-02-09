@@ -10,7 +10,7 @@ export interface UserTestType {
   date: string;
 }
 
-export const client = new MongoClient(String(process.env.MONGODB_URL));
+export const client = new MongoClient(process.env.MONGODB_URL!);
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const dbName = "personality-and-dog";

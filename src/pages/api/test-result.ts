@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { MongoClient } from "mongodb";
 
-export const client = new MongoClient(String(process.env.MONGODB_URL));
+export const client = new MongoClient(process.env.MONGODB_URL!);
 
 export interface TestResultType {
   _id: string;
