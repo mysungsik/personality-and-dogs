@@ -38,7 +38,7 @@ const LayoutFooter = () => {
             </Link>
           </li>
           <li>
-            <Link href={"https://present-6445f8fhq-mysungsik.vercel.app/"}>
+            <Link href={"https://present-me.vercel.app/"}>
               <Image
                 src="/images/layout/portfolio.png"
                 alt="logo"
