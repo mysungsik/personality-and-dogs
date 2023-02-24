@@ -1,7 +1,7 @@
 import { GetStaticPropsContext } from "next";
 import TestDiscResult from "../../components/test-disc/test-disc-result";
 import Head from "next/head";
-const FavoriteNumber = (props: { result: string }) => {
+const DISCTestResult = (props: { result: string }) => {
   const { result } = props;
 
   return (
@@ -15,7 +15,7 @@ const FavoriteNumber = (props: { result: string }) => {
   );
 };
 
-export default FavoriteNumber;
+export default DISCTestResult;
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const result = params!.result?.toString();

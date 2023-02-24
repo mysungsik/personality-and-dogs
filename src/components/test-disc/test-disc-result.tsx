@@ -53,7 +53,7 @@ const TestDiscResult = (props: { result: string }) => {
     })();
   }, []);
 
-  // DOGS 페지에서 사용할 수 있게, DB 에서 결과값이 나오면 자동으로 로컬스토리지에 넣는다.
+  // DOGS 페이지에서 사용할 수 있게, DB 에서 결과값이 나오면 자동으로 로컬스토리지에 넣는다.
   useEffect(() => {
     window.localStorage.setItem(
       "test-result",
