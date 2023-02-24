@@ -15,7 +15,7 @@ Number Test 와 DISC Test 를 통해 당신의 성격을 확인하세요.
 
 **데모** : https://personality-and-dogs.vercel.app/
 
-## &#127789;사용된 기술
+## &#127789;사용된 기술 
 
 <hr style="border: solid 1px black;">
 <p><img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black" style="border-radius:10px">
@@ -29,6 +29,22 @@ Number Test 와 DISC Test 를 통해 당신의 성격을 확인하세요.
 
     Recharts 라이브러리(그래프)
     Dog CEO API (사진 및 정보)
+
+<hr>
+
+### 주요 버전정보
+
+```js
+    
+    react : v18.2.0
+    nextjs : v14.1.6
+    typescript : v4.9.5
+    next-auth : v4.19.2
+    mongodb : v5.0.0
+    sass : v1.58.0
+    rechart : v2.3.2
+
+```
 
 <hr>
 
