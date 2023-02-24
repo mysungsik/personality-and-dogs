@@ -142,7 +142,7 @@ Next-auth 라이브러리를 사용하여, 구글 OAuth 의 구현합니다.
 
 기본적인 Oauth 의 구현 방식입니다.
 
-<img src="https://blog.kakaocdn.net/dn/bFH1BD/btr0uwLaEap/oKDLH0sDjZRcBjPWmkhOnk/img.png" style="width:600px"; style="height:500px";>
+<p><img src="https://blog.kakaocdn.net/dn/bFH1BD/btr0uwLaEap/oKDLH0sDjZRcBjPWmkhOnk/img.png" style="width:600px"; style="height:500px";></p>
 
 ```js
 
