@@ -107,7 +107,7 @@ helper 폴더 안에는 공통되는 기능 구현을 위한 로직들이 들어
 다만 널리 사용되는 기능 로직이 아니라, 특정 Test 에 해당되는 로직은,
 컴포넌트 안의 test가 실행되는 파일안에 들어있습니다.
 
-    따라서, 현재는 강아지를 매치시키는 로직 하나만 들어있습니다.
+따라서, 현재는 강아지를 매치시키는 로직 하나만 들어있습니다.
 
 <hr>
 
@@ -153,12 +153,26 @@ helper 폴더 안에는 공통되는 기능 구현을 위한 로직들이 들어
 
 Next-auth 라이브러리를 사용하여, 구글 OAuth 의 구현합니다.
 
-<p><img src="/public/images/readme/1.JPG" style="width:500px"; style="height:400px";>
-<img src="/public/images/readme/2.JPG" style="width:500px"; style="height:600px";></p>
+<p><img src="/public/images/readme/1.JPG" style="width:300px"; style="height:250px";>
+<img src="/public/images/readme/2.JPG" style="width:300px"; style="height:350px";></p>
 
 기본적인 Oauth 의 구현 방식입니다.
 
 <p><img src="https://blog.kakaocdn.net/dn/bFH1BD/btr0uwLaEap/oKDLH0sDjZRcBjPWmkhOnk/img.png" style="width:600px"; style="height:500px";></p>
+
+```js
+
+1. 클라이언트는 Oauth 로 허가 코드를 요청합니다.
+2. Oauth 는 허가 코드를  Redirect URI 를 통해 응답합니다.
+
+    이때, 클라이언트는 Oauth 로 Oauth 를 사용하는 사이트에서 발급받은 "ID 혹은 PASSWORD, CREDIT 등을 넣습니다"
+    대부분의 Oauth 는(네이버, 구글, 깃헙 등...) 디벨로퍼 탭에서 API 와 ID 등을 발급받을 수 있습니다.
+
+3. 허가코드가 생긴 클라이언트는, 서버로 허가 코드를 전달하게 되고
+4. 서버는 Oauth 로 허가 코드를 주고  접근 코드(Access Token)를 가져옵니다.
+5. 서버는 클라이언트로 접근 코드를 응답합니다
+
+```
 
 ```js
 
@@ -671,6 +685,10 @@ NEXT.JS 를 사용해보았습니다.
 
 배포는 VERCEL 를 사용하여 진행했습니다.
 
-NEXT.JS 와 잘 맞는 SERVERLESS 구동방식을 가진 배포 사이트입니다.
-서버를 직접 관리할 필요가 없고, 클라우드 상에 있는 서버에서 내가 올린 코드를 직접 동작하게하는 방식입니다.
-서버측 코드를 사용하지만, 서버를 직접 관리하는 것보다 더 유용해보여 사용하게 되었습니다.
+Vercel 은 SERVERLESS 로 동작하는 배포 방식을 가지고 있습니다.
+
+서버를 직접 관리할 필요가 없어, 동작 코드에 집중할 수 있게 도와주었습니다.
+
+Github와 기타 다른 배포보다 더 빠르며, webpack 을 사용한 React 를 배포시
+
+배포를 자동화 시켜주는 장점을 가지고 있습니다. 
